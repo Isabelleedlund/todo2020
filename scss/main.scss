@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import "edit";
+
+// Variables
+
+$font-stack: 'Montserrat', sans-serif; // @font-family
+$pcolor: #000000; // Primary Font-color
+$scolor: #ffffff; //Background color
+$tcolor: #D62B67;
+$bsize: 16px; // Body Font Size
+$tsize: 32px; // Title Font Size
+
+body {
+    width: 600px;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: $font-stack;
+    margin: 0 auto;
+
+    // Color and Animation
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    animation: background-change 10s ease-in-out infinite;
+
+        .inputSection {
+        text-align: center;
+        padding: 30px 40px;
+        
+        .pageTitle {
+            color: $scolor;
+            size: $tsize;
+        }
+
+        .formInput {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            #input {
+                margin: 0;
+                border: none;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                width: 37%;
+                padding: 10px;
+                float: left;
+                font-size: $bsize;
+            }
+
+            .addBtn {
+                border: none;
+                padding: 10px;
+                width: 12%;
+                background: $tcolor;
+                color: $scolor;
+                float: left;
+                text-align: center;
+                font-size: $bsize;
+                cursor: pointer;
+                transition: 0.3s;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+            .addBtn:hover {
+                background-color: $tcolor;
+            }
+        }
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    li {
+        margin: 0 auto;
+        cursor: pointer;
+        width: 550px;
+        color: $pcolor;
+        position: relative;
+        padding: 12px 8px 12px 40px;
+        list-style-type: none;
+        background: $tcolor;
+        border-radius: 10px;
+        font-size: $bsize;
+        transition: 0.2s;
+        margin-bottom:10px;
+    }
+
+    li:hover {
+        color: $scolor;
+        background: $tcolor;
+        cursor: pointer;
+    }
+}
+    // Close X button design
+
+    .close {
+        color: $pcolor;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 12px 16px 12px 16px;
+    }
+    .close:hover {
+        color: $scolor;
+    }
+    .update {
+        color: $pcolor;
+        position: absolute;
+        right: 40px;
+        top: 0;
+        padding: 12px 16px 12px 16px;
+    }
+    .update:hover {
+        color: $scolor;
+    }
+
+.pagesSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .pages {
+        border: none;
+        margin: 10px;
+        background-color: $scolor;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $tcolor;
+    }
+}
+
+.sortingSection {
+    width: 550px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    .pageTitle {
+        flex-direction: center;
+        color: $scolor;
+        size: $tsize;
+    }
+    .sortBtn {
+        color: $scolor;
+        border: none;
+        margin: 0 auto;
+        padding: 10px;
+        background: $tcolor;
+        color: $scolor;
+        text-align: center;
+        font-size: $bsize;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .sortBtn:hover {
+        background-color: $tcolor;
+    }
+
+    // Clear list Button Design
+    #clear-list{
+    width: 70px;
+    font-weight: bold;
+    font-size: $bsize;
+    font-family: $font-stack;
+    margin: 20px;
+    background-color: black;
+    color: $scolor;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    }
+
+    #clear-list:hover{
+    background-color:$scolor;
+    color: black;
+    }
+}
+
+// Animations on the first page. 
+@keyframes background-change {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} 
+
+
+// Edit PAGE \\
+
+    .editinputSection {
+        text-align: center;
+        padding: 30px 40px;
+    }
+        
+    .pageTitle {
+        color: $scolor;
+        size: $tsize;
+    }
+
+    .editFormInput {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        
+    .inputTodo {
+        margin: 0;
+        border: none;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 27%;
+        padding: 10px;
+        float: left;
+        font-size: $bsize;
+    }
+
+    .editAddBtn {
+        border: none;
+        padding: 10px;
+        width: 13%;
+        background: $tcolor;
+        color: $scolor;
+        float: left;
+        text-align: center;
+        font-size: $bsize;
+        cursor: pointer;
+        transition: 0.3s;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .editAddBtn:hover {
+        background-color: $tcolor;
+    }
+
+.back {
+    color: $pcolor;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+} 
+.back:hover {
+    color: $scolor;
+}

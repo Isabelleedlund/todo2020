@@ -1,0 +1,41 @@
+<%- include("partial/header.ejs") %>
+
+<body>
+    <div class="container">
+        <div class="inputSection">
+            <h2 class="pagetitle" id="Title">Things to-do</h2>
+            <form action="/createtodo" method="post" class="formInput">
+                <input type="text" name="text" id="input" placeholder="Add your to-dos here:">
+                <button type="submit" class="addBtn">Add</button>
+            </form>
+        </div>
+        <div class="todoSection">
+            <% threeTodos.forEach( (todo) => { %>
+            <ul id="myUL">
+                <li id="item" class="liItem"><%= todo.text %>
+                    <a href="/update/<%=todo._id%>"><i class="update fas fa-pencil-alt"></i></a>
+                    <a href="/delete/<%=todo._id%>"><i class="close fas fa-trash-alt"></i></a>
+                </li>
+            </ul>
+            <%  }) %>
+        </div>
+        <div class="pagesSection">
+            <% for (let page = 1; page <= pagesCount && pagesCount > 1; page++) { %>
+            <% if (currentPage === page) {  %>
+            <button class="pages"><a href="/todo/?page=<%= page %>"><%= page %></a></button>
+            <% } else { %>
+            <button class="pages"><a href="/todo/?page=<%= page %>"><%= page %></a></button>
+            <% }; %>
+            <% }; %>
+        </div>
+
+        <div class="sortingSection">
+            <h2 class="pagetitle">Sort</h2>
+            <button type="submit" class="sortBtn" id="byDateAdded"><a href="/todo/?sort=1">By date added</a></button>
+            <button type="submit" class="sortBtn" id="byABC"><a href="/todo/?sort=-1">Alphabetical Order</a></button>
+        </div>
+    </div>
+    <%- include("partial/footer.ejs") %>
+</body>
+
+</html>

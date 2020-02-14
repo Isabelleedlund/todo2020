@@ -1,0 +1,25 @@
+// Variables
+
+$font-stack: 'Montserrat', sans-serif; // @font-family
+$pcolor: #000000; // Primary Font-color
+$scolor: #ffffff; //Background color
+$tcolor: #D62B67;
+$bsize: 16px; // Body Font Size
+$tsize: 32px; // Title Font Size
+
+
+body {
+    width: 600px;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: $font-stack;
+    margin: 0 auto;
+
+    // Color and Animation
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    animation: background-change 10s ease-in-out infinite;
+}

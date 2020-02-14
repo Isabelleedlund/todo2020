@@ -1,0 +1,18 @@
+<%- include("partial/header.ejs") %> <!-- Minus tecknet betyder rendera html kod -->
+
+
+<div class="container">
+    <div class="editinputSection">
+        <a href="/todo"><i class="back fas fa-arrow-left"></i></a>
+        <h2 class="pagetitle">Update your Todo</h2>
+        <form action="/update/:id"  method="Post" class="editFormInput">                    
+            <input type="text" name="text" class="inputTodo" value="<%=response.todoitem%>">
+            <input type="text" name="_id" value="<%=response._id%>" hidden>
+            <button type="submit" class="editAddBtn">Update</button>
+        </form>
+    </div>
+</div>
+
+<%- include("partial/footer.ejs") %>
+</body>
+</html>
