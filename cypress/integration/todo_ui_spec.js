@@ -7,8 +7,8 @@ describe("UI tests for todo app", () => { // Test title that describes that this
         cy.visit("http://localhost:8000/todo") 
 
         cy.contains("Things to-do").click(); // .contains() means to find text on the page 
-        // cy.get("input").type("blä {enter}");
-        // cy.get("input").type("blä2 {enter}");
+        cy.get("input").type("blä {enter}");
+        cy.get("input").type("blä2 {enter}");
         // cy.get("input").type("blä3 {enter}");
         // cy.url().should("include", "/todo"); 
     });
@@ -17,8 +17,13 @@ describe("UI tests for todo app", () => { // Test title that describes that this
     //     cy.get(".close").click({multiple: true}); 
     // });
 
+    it("Should sort the todos", () => {
+        cy.get(".byABCD").click();
+    });
+
+
     it("Should delete the todos", () => {
-    cy.get(".close").each(() => {
+        cy.get(".close").each(() => {
         cy.get(".close").first().click();
     })
 });

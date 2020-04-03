@@ -1,26 +1,26 @@
 const express       = require("express");
 const todoItem      = require("../model/todo");
+if (process.env.NODE_ENV !== 'production') require('dotenv').config({ path: "./.env" });
 const router        = express.Router();
 
-router.route("/todo")
-    .get(async (req, res) => {
-        console.log(req.query)
-        const currentPage = req.query.page || 1;
-        const items = 3;
-        
-        const sortByDate = req.query.sort;
-        const sortByLetter = req.query.sort;
+router.get("/todo", async (req, res) => {
+    console.log(req.query)
+    const currentPage = req.query.page || 1;
+    const items = 3;
+    
+    const sortByDate = req.query.sort;
+    const sortByLetter = req.query.sort;
 
-        const allTodos = await todoItem.find()
-        const threeTodos = await todoItem
-            .find()
-            .skip((currentPage - 1) * items)
-            .limit(items)
-            .sort({date: sortByDate, text: sortByLetter });
-        const pagesCount = Math.ceil(allTodos.length / items);
+    const allTodos = await todoItem.find()
+    const threeTodos = await todoItem
+        .find()
+        .skip((currentPage - 1) * items)
+        .limit(items)
+        .sort({date: sortByDate, text: sortByLetter });
+    const pagesCount = Math.ceil(allTodos.length / items);
 
-        res.render("todo", {threeTodos, pagesCount, currentPage})
-    });
+    res.render("todo", {threeTodos, pagesCount, currentPage})
+});
 
 router.post("/createtodo", async(req, res) => {
    await new todoItem({
